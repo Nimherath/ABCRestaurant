@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+    version="4.0"
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+                        http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+  <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>ManagePackageServlet</servlet-name>
+        <servlet-class>com.yourpackage.ManagePackageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManagePackageServlet</servlet-name>
+        <url-pattern>/ManagePackageServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>your.package.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+  <servlet>
+    <servlet-name>AddAvailabilityServlet</servlet-name>
+    <servlet-class>com.example.servlet.AddAvailabilityServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteAvailabilityServlet</servlet-name>
+    <servlet-class>com.example.servlet.DeleteAvailabilityServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewReservationsServlet</servlet-name>
+    <servlet-class>com.example.servlet.ViewReservationsServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AddAvailabilityServlet</servlet-name>
+    <url-pattern>/addAvailability</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteAvailabilityServlet</servlet-name>
+    <url-pattern>/deleteAvailability</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewReservationsServlet</servlet-name>
+    <url-pattern>/viewReservations</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.yourpackage.RegisterServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/RegisterServlet</url-pattern>
+</servlet-mapping>
+  
+  
+</web-app>

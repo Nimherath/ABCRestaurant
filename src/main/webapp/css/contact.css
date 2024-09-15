@@ -1,0 +1,377 @@
+/* CSS Variables */
+:root {
+    --primary-color: #000;
+    --secondary-color: #ffffff;
+    --accent-color: #ccc;
+    --font-family-base: 'Montserrat', sans-serif;
+    --font-family-brand: 'Cinzel', serif;
+    --font-family-heading: 'Dosis', sans-serif;
+    --padding-default: 20px;
+    --transition-speed: 0.3s;
+}
+
+/* Global Styles and Resets */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family-base);
+    background-image: url('contactbg.svg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgb(0, 0, 0);
+    color: var(--secondary-color);
+    padding: 0rem 2rem;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 4.5rem;
+}
+
+.navbar .brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-family: var(--font-family-brand);
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.navbar .nav-links li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+}
+
+.navbar .right-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar .nav-icon {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+}
+
+.navbar .nav-icon i {
+    font-size: 1.2rem;
+}
+
+.navbar .nav-icon:hover {
+    color: var(--accent-color);
+}
+
+.search__container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    padding: 0.1rem 0.8rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    background-color: #f9f9f9;
+    max-width: 150px;
+    margin: 0;
+    position: relative;
+}
+
+.search__icon {
+    font-size: 1rem;
+    color: black;
+    margin-right: 0.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.search__input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 0.3rem;
+    font-size: 0.9rem;
+    background-color: transparent;
+    width: 0;
+    opacity: 0;
+    transition: width 0.5s ease, opacity 0.5s ease;
+}
+
+/* Nav Bar Hover Underline Animation */
+.nav-links li {
+    display: inline-block;
+    position: relative;
+    margin-right: 20px; /* Adjust as needed */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #000; /* Adjust the text color as needed */
+    padding-bottom: 5px; /* Adjust as needed */
+    display: inline-block;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* Adjust the thickness of the underline */
+    background-color: white; /* Color of the underline */
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* Hover and focus styles */
+.search__container:hover, .search__input:focus {
+    border-color: rgb(0, 0, 0);
+    background-color: white;
+}
+
+.search__container:hover .search__icon, .search__input:focus + .search__icon {
+    color: rgb(0, 0, 0);
+    transform: rotate(90deg);
+}
+
+.search__container:hover .search__input, .search__input:focus {
+    width: 100px;
+    opacity: 1;
+}
+
+/* Mobile-friendly styles */
+@media (max-width: 768px) {
+    .search__container {
+        max-width: 100%;
+    }
+}
+
+
+/* Contact us section */
+.main-container {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align:center;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    margin-right: 10px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.input-group input,
+.input-group textarea {
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.submit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left:30px;
+    margin-bottom:30px;
+}
+
+.submit-btn:hover {
+    background-color: #555;
+}
+
+#details-section p {
+    margin: 20px 0;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+#map-container {
+    width: 100%;
+    height: 400px;
+    margin-top:30px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 50px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.newsletter {
+    flex: 1;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.newsletter h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+    text-align: left;
+}
+
+.newsletter p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 16px;
+    flex: 1;
+}
+
+.newsletter button[type="submit"] {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.newsletter button[type="submit"]:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.footer-links {
+    display: flex;
+    flex: 2;
+    justify-content: space-around;
+}
+
+.shop, .help, .about {
+    text-align: left;
+}
+
+.shop h3, .help h3, .about h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.shop ul, .help ul, .about ul {
+    list-style: none;
+    padding: 0;
+}
+
+.shop li, .help li, .about li {
+    margin-bottom: 5px;
+}
+
+.shop a, .help a, .about a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color var(--transition-speed) ease;
+}
+
+.shop a:hover, .help a:hover, .about a:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter, .shop, .help, .about {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
